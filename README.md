@@ -1,8 +1,42 @@
 Sistema de Reconhecimento Facial 
 Documentação Técnica do Projeto 
+
+Como Usar:
+I. Pré-requisitos
+Instale o Bun (gerenciador/runtime usado pelo projeto):
+
+Windows (PowerShell):
+powershell -c "irm bun.sh/install.ps1 | iex"
+macOS / Linux:
+curl -fsSL https://bun.sh/install | bash
+Verifique:
+
+bun --version
+II. Abrir o terminal na pasta do projeto
+Descompacte faceid-security.zip em uma pasta (ex.: Documentos/faceid-security).
+Abra um terminal:
+Windows: clique com o botão direito dentro da pasta → "Abrir no Terminal" (ou abra o PowerShell e use cd C:\Users\SeuNome\Documentos\faceid-security)
+macOS: arraste a pasta para o ícone do Terminal, ou cd ~/Documentos/faceid-security
+VS Code: abra a pasta no VS Code → menu Terminal → New Terminal (já abre na pasta certa)
+Confirme que está no lugar certo (deve listar package.json):
+
+ls        # macOS/Linux
+dir       # Windows
+
+III. Rodar os comandos
+bun install
+(baixa as dependências — cria a pasta node_modules)
+
+bun dev
+(inicia o servidor local — vai mostrar algo como Local: http://localhost:3000)
+
+IV. Abrir no navegador
+Acesse a URL exibida no terminal (geralmente http://localhost:3000).
+Para parar o servidor: pressione Ctrl + C no terminal.
+
+
 1. Introdução 
 Quando começamos a pensar neste projeto, o objetivo era simples de enunciar, mas desafiador de implementar: construir um sistema web capaz de cadastrar pessoas, armazenar fotos do rosto delas e, posteriormente, reconhecer essas pessoas a partir de uma nova imagem ou de um vídeo capturado pela webcam, em tempo real, dentro do próprio navegador. 
-
 A proposta foi pensada como uma aplicação completa, que integra três pilares fundamentais da computação moderna: visão computacional, persistência de dados em nuvem e desenvolvimento web reativo. Optamos por construir tudo isso em uma stack JavaScript/TypeScript, justamente porque ela permite unir o frontend, a lógica de processamento de imagens e a comunicação com o backend dentro de um mesmo ecossistema. 
 
 2. Concepção Inicial 
